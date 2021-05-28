@@ -1,0 +1,6 @@
+generatorName: csharp-unity3d
+outputDir: samples/client/petstore/csharp/unity3d
+inputSpec: modules/openapi-generator/src/test/resources/3_0/petstore.yaml
+templateDir: modules/openapi-generator/src/main/resources/csharp-unity3d
+additionalProperties:
+  hideGenerationTimestamp: "true"

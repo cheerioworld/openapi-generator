@@ -1,0 +1,9 @@
+Creating modules/openapi-generator/src/main/java/org/openapitools/codegen/languages/CsharpUnity3dClientCodegen.java
+Creating modules/openapi-generator/src/main/resources/csharp-unity3d/README.mustache
+Creating modules/openapi-generator/src/main/resources/csharp-unity3d/model.mustache
+Creating modules/openapi-generator/src/main/resources/csharp-unity3d/api.mustache
+Creating bin/configs/csharp-unity3d-petstore-new.yaml
+Creating modules/openapi-generator/src/test/java/org/openapitools/codegen/csharp/unity3d/CsharpUnity3dClientCodegenTest.java
+Creating modules/openapi-generator/src/test/java/org/openapitools/codegen/csharp/unity3d/CsharpUnity3dClientCodegenModelTest.java
+Creating modules/openapi-generator/src/test/java/org/openapitools/codegen/csharp/unity3d/CsharpUnity3dClientCodegenOptionsTest.java
+Creating modules/openapi-generator/src/test/java/org/openapitools/codegen/options/CsharpUnity3dClientCodegenOptionsProvider.java
