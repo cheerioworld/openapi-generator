@@ -691,6 +691,10 @@ public class CSharpNetCoreClientCodegen extends AbstractCSharpCodegen {
             supportingFiles.add(new SupportingFile("FileParameter.mustache", clientPackageDir, "FileParameter.cs"));
             typeMapping.put("file", "FileParameter");
         }
+        if (UNITYWEBREQUEST.equals(getLibrary())) {
+            supportingFiles.add(new SupportingFile("FileParameter.mustache", clientPackageDir, "FileParameter.cs"));
+            typeMapping.put("file", "FileParameter");
+        }
 
         supportingFiles.add(new SupportingFile("IApiAccessor.mustache", clientPackageDir, "IApiAccessor.cs"));
         supportingFiles.add(new SupportingFile("Configuration.mustache", clientPackageDir, "Configuration.cs"));

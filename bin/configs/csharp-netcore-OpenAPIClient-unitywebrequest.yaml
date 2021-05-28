@@ -6,7 +6,11 @@ templateDir: modules/openapi-generator/src/main/resources/csharp-netcore
 library: unitywebrequest
 additionalProperties:
   packageGuid: '{321C8C3F-0156-40C1-AE42-D59761FB9B6C}'
-  useCompareNetObjects: true 
+  useCompareNetObjects: false 
   disallowAdditionalPropertiesIfNotPresent: false
   useOneOfDiscriminatorLookup: true
   targetFramework: netstandard2.0
+  library: unitywebrequest
+  validatable: false
+  supportsRetry: false
+  
