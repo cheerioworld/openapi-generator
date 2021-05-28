@@ -49,6 +49,7 @@ public class CSharpNetCoreClientCodegen extends AbstractCSharpCodegen {
     // HTTP libraries
     protected static final String RESTSHARP = "restsharp";
     protected static final String HTTPCLIENT = "httpclient";
+    protected static final String UNITYWEBREQUEST = "unitywebrequest";
 
     // Project Variable, determined from target framework. Not intended to be user-settable.
     protected static final String TARGET_FRAMEWORK_IDENTIFIER = "targetFrameworkIdentifier";
@@ -300,6 +301,7 @@ public class CSharpNetCoreClientCodegen extends AbstractCSharpCodegen {
         regexModifiers.put('s', "Singleline");
         regexModifiers.put('x', "IgnorePatternWhitespace");
 
+        supportedLibraries.put(UNITYWEBREQUEST, "UnityWebRequest (https://docs.unity3d.com/ScriptReference/Networking.UnityWebRequest.html)");
         supportedLibraries.put(HTTPCLIENT, "HttpClient (https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient) "
                 + "(Experimental. May subject to breaking changes without further notice.)");
         supportedLibraries.put(RESTSHARP, "RestSharp (https://github.com/restsharp/RestSharp)");
@@ -586,8 +588,12 @@ public class CSharpNetCoreClientCodegen extends AbstractCSharpCodegen {
             setLibrary(HTTPCLIENT);
             additionalProperties.put("useHttpClient", true);
             needsUriBuilder = true;
+        } else if (UNITYWEBREQUEST.equals(getLibrary())) {
+            setLibrary(UNITYWEBREQUEST);
+            additionalProperties.put("useUnityWebRequest", true);
+            needsUriBuilder = true;
         } else {
-            throw new RuntimeException("Invalid HTTP library " + getLibrary() + ". Only restsharp, httpclient are supported.");
+            throw new RuntimeException("Invalid HTTP library " + getLibrary() + ". Only restsharp, httpclient, unitywebrequest are supported.");
         }
 
         String inputFramework = (String) additionalProperties.getOrDefault(CodegenConstants.DOTNET_FRAMEWORK, defaultFramework.name);
