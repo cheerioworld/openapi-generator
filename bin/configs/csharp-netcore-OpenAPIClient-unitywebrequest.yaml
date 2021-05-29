@@ -4,13 +4,14 @@ outputDir: samples/client/petstore/csharp-netcore/OpenAPIClient-unitywebrequest
 inputSpec: modules/openapi-generator/src/test/resources/3_0/java/petstore-with-fake-endpoints-models-for-testing-with-http-signature.yaml
 templateDir: modules/openapi-generator/src/main/resources/csharp-netcore
 library: unitywebrequest
+debugModels: true
+validatable: false
+supportsRetry: false
 additionalProperties:
   packageGuid: '{321C8C3F-0156-40C1-AE42-D59761FB9B6C}'
   useCompareNetObjects: false 
-  disallowAdditionalPropertiesIfNotPresent: false
+  disallowAdditionalPropertiesIfNotPresent: true
   useOneOfDiscriminatorLookup: true
   targetFramework: netstandard2.0
   library: unitywebrequest
-  validatable: false
-  supportsRetry: false
   

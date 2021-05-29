@@ -1,0 +1,1 @@
+rm -r ../csharp-unitywebrequest-sample/Assets/Sample

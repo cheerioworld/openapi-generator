@@ -693,6 +693,7 @@ public class CSharpNetCoreClientCodegen extends AbstractCSharpCodegen {
         }
         if (UNITYWEBREQUEST.equals(getLibrary())) {
             supportingFiles.add(new SupportingFile("FileParameter.mustache", clientPackageDir, "FileParameter.cs"));
+            supportingFiles.add(new SupportingFile("UnityWebRequestTaskExtension.mustache", clientPackageDir, "UnityWebRequestTaskExtension.cs"));
             typeMapping.put("file", "FileParameter");
         }
 
@@ -741,9 +742,15 @@ public class CSharpNetCoreClientCodegen extends AbstractCSharpCodegen {
 
         supportingFiles.add(new SupportingFile("Solution.mustache", "", packageName + ".sln"));
         supportingFiles.add(new SupportingFile("netcore_project.mustache", packageFolder, packageName + ".csproj"));
+        if (UNITYWEBREQUEST.equals(getLibrary())) {
+            supportingFiles.add(new SupportingFile("netcore_unitywebrequest_project_asmdef.mustache", packageFolder, packageName + ".asmdef"));
+        }
 
         if (Boolean.FALSE.equals(excludeTests.get())) {
             supportingFiles.add(new SupportingFile("netcore_testproject.mustache", testPackageFolder, testPackageName + ".csproj"));
+            if (UNITYWEBREQUEST.equals(getLibrary())) {
+                supportingFiles.add(new SupportingFile("netcore_unitywebrequest_testproject_asmdef.mustache", testPackageFolder, testPackageName + ".asmdef"));
+            }
         }
 
         supportingFiles.add(new SupportingFile("appveyor.mustache", "", "appveyor.yml"));
